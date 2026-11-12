@@ -538,6 +538,7 @@
   const k = {
     sector: $('#k-sector'), pain: $('#k-pain'), name: $('#k-name'), desc: $('#k-desc'),
     flow: $('#k-flow'), app: $('#k-app'), screen: $('#k-screen'), kpis: $('#k-kpis'), rows: $('#k-rows'),
+    page: $('#k-page'), pageT: $('#k-page-t'),
   };
   let sectorKey = 'distribuidores';
   let flowTimer = 0, flowIdx = 0, swapTimer = 0, xpVisible = false;
@@ -551,6 +552,14 @@
     k.desc.textContent = d.desc;
     k.app.textContent = d.app || d.name;
     k.screen.textContent = d.screen;
+    // enlace a la página propia del sector, si la tiene
+    if (k.page) {
+      k.page.hidden = !d.page;
+      if (d.page) {
+        k.page.href = d.page;
+        if (k.pageT) k.pageT.textContent = `Software a medida para ${d.sector.toLowerCase()}`;
+      }
+    }
     k.flow.replaceChildren(
       ...d.flow.map((step, i) => {
         const li = el('li');

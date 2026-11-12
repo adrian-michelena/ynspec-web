@@ -2,10 +2,12 @@
    Son conceptos ilustrativos con datos ficticios (no programas terminados).
    Cada entrada: sector, pain, name, desc, flow[4], screen, kpis[[etiqueta, valor, 'warn'?]],
    rows[[texto, detalle, estado?, tono?]] con tono '' (azul) | 'amber' | 'gray'.
-   `app` es opcional: nombre que se muestra en la barra de la ventana si difiere de `name`. */
+   `app` es opcional: nombre que se muestra en la barra de la ventana si difiere de `name`.
+   `page` es opcional: ruta de la página propia del sector (/sectores/<slug>), si la tiene. */
 window.YNSPEC_CASOS = {
   /* ── Grupo A: trabajo que se repite ───────────────────────── */
   distribuidores: {
+    page: '/sectores/distribuidores-y-mayoristas',
     sector: 'Distribuidores y mayoristas',
     pain: 'Pedidos que llegan por correo y WhatsApp y se copian a mano.',
     name: 'Pedidos en orden',
@@ -21,6 +23,7 @@ window.YNSPEC_CASOS = {
     ],
   },
   instaladoras: {
+    page: '/sectores/instaladoras-y-mantenimiento',
     sector: 'Instaladoras y mantenimiento',
     pain: 'Partes incompletos que hay que reclamar al técnico.',
     name: 'Parte a cierre',
@@ -36,6 +39,7 @@ window.YNSPEC_CASOS = {
     ],
   },
   fincas: {
+    page: '/sectores/administradores-de-fincas',
     sector: 'Administradores de fincas',
     pain: 'Incidencias repartidas y vecinos que preguntan lo mismo.',
     name: 'Incidencia clara',
@@ -51,6 +55,7 @@ window.YNSPEC_CASOS = {
     ],
   },
   fabricantes: {
+    page: '/sectores/fabricantes-por-encargo',
     sector: 'Fabricantes por encargo',
     pain: 'Presupuestos lentos y versiones que se pisan.',
     name: 'Presupuesto por reglas',
@@ -66,6 +71,7 @@ window.YNSPEC_CASOS = {
     ],
   },
   gestorias: {
+    page: '/sectores/gestorias-y-asesorias',
     sector: 'Gestorías y asesorías',
     pain: 'Perseguir documentos y revisar expedientes uno a uno.',
     name: 'Expediente completo',
@@ -81,6 +87,7 @@ window.YNSPEC_CASOS = {
     ],
   },
   reformas: {
+    page: '/sectores/reformas-y-rehabilitacion',
     sector: 'Reformas y rehabilitación',
     pain: 'Cambios y extras de obra que nadie tiene apuntados igual.',
     name: 'Extras bajo control',

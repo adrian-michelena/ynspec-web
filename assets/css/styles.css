@@ -2446,6 +2446,14 @@ i.x {
   opacity: 0;
   transform: translateY(14px) scale(0.985);
 }
+.xp__more {
+  display: flex;
+  width: fit-content;
+  margin-top: 18px;
+}
+.xp__more[hidden] {
+  display: none;
+}
 .xp__sector {
   display: inline-flex;
   padding: 6px 12px;
@@ -3150,6 +3158,21 @@ i.x {
 .footer a:not(.logo) {
   transition: color 0.25s;
 }
+/* sectores con página propia: fila de enlaces sobre el pie */
+.footer__sect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  padding-block: 26px 0;
+  border-top: 1px solid var(--line);
+}
+.footer__sect-h {
+  font-weight: 600;
+  color: var(--ink);
+}
+.footer__sect [aria-current='page'] {
+  color: var(--ink);
+}
 .footer a:not(.logo):hover {
   color: var(--ink);
 }
@@ -3259,6 +3282,9 @@ i.x {
   .xp__info > .btn {
     order: 7;
     align-self: flex-start;
+  }
+  .xp__more {
+    order: 8;
   }
 
   /* comparativa en tarjetas */

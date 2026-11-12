@@ -1,0 +1,209 @@
+/* Páginas por sector (/sectores/<slug>), generadas por scripts/sectores.py.
+   Base: styles.css. Aquí solo lo propio: hero sin composición, «qué hacemos / qué no»
+   (copiado de instaladores.css para no cargar esa hoja entera) y el resumen del método. */
+
+/* hero sin la composición ilustrada: más aire abajo */
+.hero--sector {
+  padding-bottom: clamp(64px, 9vw, 120px);
+}
+.hero--sector .hero__title {
+  font-size: clamp(38px, 6vw, 80px);
+}
+
+/* composición del hero (piezas de styles.css): paso pendiente y nota en el móvil */
+.checks-mini i.wait {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  border: 1.5px dashed var(--line-2);
+  border-radius: 5px;
+}
+.phone__note {
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: var(--blue-50);
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--blue);
+}
+.phone__done small {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  color: var(--soft);
+}
+.phone__done li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 2px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--ink-2);
+}
+.phone__done em {
+  font-style: normal;
+  color: var(--muted);
+}
+.page-sector .quote__total b {
+  white-space: nowrap;
+}
+
+/* el caso: sin el selector de sectores de la home, el bloque arranca justo bajo el titular */
+.page-sector #ejemplo .xp {
+  margin-top: 0;
+}
+
+/* ───────── qué hacemos y qué no ───────── */
+
+.honest {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.honest__card {
+  padding: clamp(24px, 3.2vw, 44px);
+  border: 1.5px solid transparent;
+  border-radius: var(--r-xl);
+  background: var(--paper);
+}
+.honest__card--no {
+  border: 1.5px dashed var(--line-2);
+  background: none;
+}
+.honest__tag {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--blue-50);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+}
+.honest__card--no .honest__tag {
+  background: var(--paper-2);
+  color: var(--muted);
+}
+.honest__list {
+  margin-top: 14px;
+}
+.honest__list li {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line-2);
+  font-size: 16.5px;
+  line-height: 1.42;
+  color: var(--ink-2);
+}
+.honest__list li:first-child {
+  border-top: 0;
+}
+.honest__list i {
+  margin-top: 1px;
+}
+.honest__list strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ───────── resumen del método ───────── */
+
+.method {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 32px;
+  max-width: 1120px;
+  margin: 16px auto 0;
+  padding: clamp(22px, 2.6vw, 32px) clamp(24px, 3.2vw, 44px);
+  border-radius: var(--r-xl);
+  background: var(--ink);
+  color: #fff;
+}
+.method__h {
+  flex-basis: 100%;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+.method__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 32px;
+  flex: 1 1 560px;
+}
+.method__list li {
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.78);
+}
+.method__list strong {
+  color: #fff;
+  font-weight: 600;
+}
+.method .link {
+  color: #fff;
+}
+
+@media (max-width: 960px) {
+  .honest,
+  .method__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ───────── enlaces dentro del texto ───────── */
+
+.ilink {
+  color: var(--blue);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+@media (hover: hover) {
+  .ilink:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* ───────── índice /sectores/ ───────── */
+
+.hero--hub {
+  padding-bottom: clamp(48px, 6vw, 88px);
+}
+.sect {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.sect p {
+  flex: 1;
+}
+.sect__a {
+  margin-top: 18px;
+  align-self: flex-start;
+}
+/* toda la tarjeta es clicable */
+.sect__a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.sects__more {
+  max-width: 720px;
+  margin: clamp(32px, 4vw, 48px) auto 0;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
